@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login | Spotlight Digital</title>
+
+<link rel="stylesheet" href="login.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+
+  <div class="login-card">
+    <h2>Welcome Back 👋</h2>
+    <p>Login to manage your campaigns</p>
+
+    <form>
+      <!-- Email -->
+      <div class="input-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" placeholder="Email Address" required>
+      </div>
+
+      <!-- Phone -->
+      <div class="input-group">
+        <i class="fa fa-phone"></i>
+        <input type="tel" placeholder="Phone Number" required>
+      </div>
+
+      <!-- Service Select -->
+      <div class="input-group">
+        <i class="fa fa-briefcase"></i>
+        <select required>
+          <option value="">Select Service</option>
+          <option>Meta Ads</option>
+          <option>Google Ads</option>
+          <option>YouTube Ads</option>
+          <option>Website Development</option>
+          <option>Accounts Management</option>
+        </select>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <span class="note">🔒 Your information is safe with us</span>
+  </div>
+
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
