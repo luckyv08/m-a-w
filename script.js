@@ -1,23 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
+let slides = document.querySelectorAll(".slides img");
+let index = 0;
 
-  const hero = document.querySelector(".hero");
+function showSlide(i) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[i].classList.add("active");
+}
 
-  // 🔥 Digital Marketing slideshow images
-  const images = [
-    "./images/digital1.jpg",
-    "./images/digital2.jpg",
-    "./images/digital3.jpg"
-  ];
+document.querySelector(".next").onclick = () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+};
 
-  let index = 0;
+document.querySelector(".prev").onclick = () => {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+};
 
-  // First image
-  hero.style.backgroundImage = `url("${images[index]}")`;
-  hero.style.backgroundSize = "cover";
-  hero.style.backgroundPosition = "center";
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    hero.style.backgroundImage = `url("${images[index]}")`;
-  }, 4000); // 4 seconds
-});
+setInterval(() => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}, 4000);
