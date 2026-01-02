@@ -6,26 +6,24 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   const service = document.querySelector("select").value;
 
   try {
-    const response = await fetch(
-      "https://maw-backend.onrender.com/login",   // ✅ Render URL
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email, phone, service })
-      }
-    );
+    const response = await fetch("https://maw-backend.onrender.com/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, phone, service })
+    });
+
+    const data = await response.json();
+    console.log("Server response:", data);
 
     if (response.ok) {
       window.location.href = "thankyou.html";
     } else {
-      const err = await response.json();
-      alert(err.message || "Error saving data");
+      alert(data.message || "Server error");
     }
-
-  } catch (error) {
-    console.error(error);
-    alert("❌ Backend server not reachable");
+  } catch (err) {
+    console.error("Fetch error:", err);
+    alert("Backend not reachable");
   }
 });
