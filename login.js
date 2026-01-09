@@ -6,7 +6,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
   const service = document.querySelector("select").value;
 
   try {
-    const response = await fetch("https://maw-backend.onrender.com/login", {
+    const response = await fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -15,15 +15,14 @@ document.querySelector("form").addEventListener("submit", async function (e) {
     });
 
     const data = await response.json();
-    console.log("Server response:", data);
 
     if (response.ok) {
       window.location.href = "thankyou.html";
     } else {
       alert(data.message || "Server error");
     }
-  } catch (err) {
-    console.error("Fetch error:", err);
-    alert("Backend not reachable");
+  } catch (error) {
+    console.error(error);
+    alert("Backend server not reachable");
   }
 });
