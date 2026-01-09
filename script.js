@@ -20,3 +20,12 @@ setInterval(() => {
   index = (index + 1) % slides.length;
   showSlide(index);
 }, 4000);
+
+
+
+/*--------------------Home-----about-----services-----------*/
+
+
+function toggleMenu(){
+  document.getElementById("nav-menu").classList.toggle("active");
+}

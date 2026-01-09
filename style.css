@@ -9,16 +9,7 @@ body{
   color:#0f172a;
 }
 
-/* HEADER */
-.header{
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 40px;
-  background:#0f172a;
-  color:white;
-  position:sticky;
-  top: 0px;
-}
+
 
 .logo{
   font-size:22px;
@@ -268,9 +259,18 @@ body {
 
 
 .header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;   /* IMPORTANT */
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 15px 40px;
+  background: #0f172a;
+  color: white;
 }
+
+
 
 
 .mawlogo{
@@ -279,4 +279,133 @@ body {
   top: 5px;
   left: -10px;
 
+}
+
+/*-------------------------------------------------Home---------contact---------------services------------------------------------*/
+
+
+.page{
+  padding:80px 20px;
+  text-align:center;
+  margin-top: 10px;
+  background:linear-gradient(120deg,#38bdf8,#6366f1);
+  color:white;
+}
+
+.hero-mini{
+  min-height:40vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.content{
+  padding:60px 20px;
+  display:grid;
+  gap:30px;
+  max-width:900px;
+  margin:auto;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* CONTACT DETAILS ONLY */
+.contact-details{
+  padding:70px 20px;
+  text-align:center;
+  max-width:700px;
+  margin:auto;
+}
+
+.contact-details h2{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.contact-details p{
+  color:#475569;
+  margin-bottom:40px;
+}
+
+.details-box{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.detail-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  font-size:18px;
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.detail-item i{
+  color:#38bdf8;
+  font-size:20px;
+}
+
+/* MOBILE PERFECT */
+@media (max-width:768px){
+  .contact-details h2{
+    font-size:26px;
+  }
+
+  .detail-item{
+    font-size:16px;
+    padding:15px;
+  }
+}
+
+/* ANIMATIONS */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp .8s forwards;
+}
+
+.delay{ animation-delay:.3s }
+.delay2{ animation-delay:.6s }
+.delay3{ animation-delay:.9s }
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+
+
+/* .mawlogo {
+    position: relative;
+} */
+
+
+
+
+/* FIX NAVBAR LINKS LOOK */
+.header nav a{
+  text-decoration: none;   /* underline hatao */
+  color: white;            /* clean text */
+  font-weight: 500;
+}
+
+.header nav a:visited{
+  color: white;            /* purple/blue visited color hatao */
+}
+
+.header nav a:hover{
+  color: #38bdf8;          /* optional hover effect */
 }
