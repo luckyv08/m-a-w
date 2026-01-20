@@ -374,6 +374,22 @@ body {
   animation:fadeUp .8s forwards;
 }
 
+                           /*-------------------------------------Services Card*-----------------------------------*/
+.service-card a{
+  text-decoration:none;
+  color:#000;
+}
+
+.service-card h3{
+  margin:10px 0 5px;
+}
+
+.service-card p{
+  margin:0;
+  color:#555;
+}
+
+
 .delay{ animation-delay:.3s }
 .delay2{ animation-delay:.6s }
 .delay3{ animation-delay:.9s }
